@@ -317,6 +317,7 @@ mark_used:                                                      @Store inputted 
         MOV R7, #0
 
 checkword:                                                      @1 is added to R7 every time an '_' is found in hidden_word
+
         LDRB R5, [R1], #1
         TEQ R0, R5
         LDREQB R4, [R2]
@@ -345,13 +346,19 @@ checkword:                                                      @1 is added to R
         B try_again                                             @Branch to try_again (prompts user to try again)
 
 
+
+
+
 .data
+
 .balign 2
+
 filename_word:  .asciz "words.txt"
 filename_word_len       = .-filename_word
 title:          .asciz "  ________________________________________________________________\n  |   _    _            _   _   _____  _    _            _   _   |\n  |  | |  | |    /\\    | \\ | | / ____|| \\  / |    /\\    | \\ | |  |\n  |  | |__| |   /  \\   |  \\| || |  __ |  \\/  |   /  \\   |  \\| |  |\n  |  |  __  |  / /\\ \\  | . ` || | |_ || \\  / |  / /\\ \\  | . ` |  |\n  |  | |  | | / ____ \\ | |\\  || |__| || |\\/| | / ____ \\ | |\\  |  |\n  |  |_|  |_|/_/    \\_\\|_| \\_| \\____/ |_|  |_|/_/    \\_\\|_| \\_|  |\n  |______________________________________________________________|\n\n"             @ASCII art title
-title_text:     .asciz "  A 32-bit ARM assembly game by Victor Virag\n"
+title_text:     .asciz "  A 32-bit ARM assembly game by r1ghtwr0ng\n"
 prompt:         .asciz "  Enter next character (A-Z) or 0 (zero) to exit: "
+
 seperator:      .asciz "\n  _______________________"
 top_part1:      .asciz "\n  | _)__   ___________  |"
 top_part2:      .asciz "\n  |_____)  |________ |  |"
@@ -368,6 +375,7 @@ line_6_2legs:   .asciz "\n  | '  __ / \\ __   | |  |"
 line_6_nolegs:  .asciz "\n  |' , __     __   | |  |"
 line_7:         .asciz "\n  |'   ||      |   | |  |"
 line_8:         .asciz "\n  |____|_______|___|_|__|\n"
+
 invalid_char:   .asciz "\n  -------- Invalid character --------\n\n"
 too_many_chars: .asciz "\n  -------- Too many characters inputted --------\n\n"
 repeat_char:    .asciz "\n  -------- You have already used this character --------\n\n"
@@ -379,6 +387,7 @@ exit_msg:       .asciz "  Thank you for playing!\n"
 quit_msg:       .asciz "  Quitting...\n"
 newline:        .asciz "\n"
 
+
 .bss
 .balign 2
 char:           .space 22               @Holds user input
@@ -388,3 +397,5 @@ wrong:          .space 8                @Holds incorrectly guessed characters
 used:           .space 28               @Holds all used characters
 buff:           .space 300              @Holds words.txt file contents
 .end
+
+
