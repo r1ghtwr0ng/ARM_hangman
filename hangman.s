@@ -10,7 +10,7 @@
 
 @3. Non-changing ascii strings are located in the .data section, while labels that change are located in the .bss section
 
-@4. Input validation is handled by input_valid. The number of characters accepted for input is 20. Should the user input more than 20 characters, the ramaining ones will be interpreted as input for the next propmt, or placed onto the terminal if the program quits.
+@4. Input validation is handled by input_valid. The number of characters accepted for input is 20. Should the user input more than 20 characters, the ramaining ones will be interpreted as input for the next prompt, or placed onto the terminal if the program quits.
 
 @5. The words.txt file is opened in the first few lines of the main finction. The filename is held inside the filename_word label on the top of the .data section.
 
