@@ -397,5 +397,3 @@ wrong:          .space 8                @Holds incorrectly guessed characters
 used:           .space 28               @Holds all used characters
 buff:           .space 300              @Holds words.txt file contents
 .end
-
-
